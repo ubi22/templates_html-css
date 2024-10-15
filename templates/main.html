@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kinoman</title>
+	<style>
+		body {
+				margin: 0;
+				font-family: Arial, sans-serif;
+		}
+		.navbar {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background-color: #333;
+				color: white;
+				padding: 10px 20px;
+		}
+		.navbar a {
+				color: white;
+				text-decoration: none;
+				padding: 14px 20px;
+		}
+		.navbar a:hover {
+				background-color: #575757;
+		}
+		.menu-icon {
+				display: none;
+				cursor: pointer;
+		}
+		.menu {
+				display: flex;
+		}
+		.information {
+			padding: 10px;
+		}
+		.card-product {
+			width: 400px; /* Ширина блока */
+			height: 650px; /* Высота блока */
+			background-color: rgb(255, 255, 255); /* Цвет фона */
+			box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Тень */
+		}
+		.card-product:hover {
+			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); /* Более выраженная тень при наведении */
+		}
+		.container {
+			padding: 45px;
+			display: grid;
+			grid-template-columns: repeat(4, 1fr); /* 3 колонки */
+			row-gap: 10px; /* Расстояние между строками */
+			column-gap: 10px;
+		}
+		@media (max-width: 1680px) {
+			.container {
+				padding: 45px;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+				row-gap: 10px; /* Расстояние между строками */
+				column-gap: 10px;
+			}
+		}
+		@media (max-width: 1210px) {
+			.container {
+				padding: 45px;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr); /* 3 колонки */
+				row-gap: 10px; /* Расстояние между строками */
+				column-gap: 10px;
+			}
+		}
+		@media (max-width: 900px) {
+				.container {
+					padding-left: 20%;
+					display: block;
+				}
+				.menu {
+						display: none;
+						flex-direction: column;
+						width: 100%;
+				}
+				.menu-icon {
+						display: block;
+				}
+				.menu.active {
+						display: flex;
+				}
+				.card-product {
+					margin-top: 20px;
+				}
+		}
+			
+	</style>
+</head>
+<script>
+	function toggleMenu() {
+			const menu = document.getElementById('menu');
+			menu.classList.toggle('active');
+	}
+</script>
+<body>
+
+	<div class="navbar">
+		<h1>Spa сервис</h1>
+		<div class="menu-icon" onclick="tog-gridgleMenu()">☰</div>
+		<div class="menu" id="menu">
+				<a href="#home">Главная</a>
+				<a href="#services">Услуги</a>
+				<a href="#about">О нас</a>
+				<a href="/admin_login">Админ панель</a>
+		</div>
+	</div>
+	<div class="container">
+		<div class="card-product">
+			<img src="https://sun6-20.userapi.com/impg/l2GuunLW_XRRLJiqoIiMtuSb36nBJmDow1H3Iw/jUSeavkuWm8.jpg?size=400x600&quality=95&sign=6f0beae1b296a05d2c6115de80eae695&c_uniq_tag=NfObQM5DP1gPpdU0tm86OdgcmSBbCAjQiyMN801gqLA&type=album" width="400" height="500" alt="Побег из шоушенка">
+			<div class="information">
+				<h1>Побег из шоушенка</h1>
+				<h3>Оценка: 9/10</h3>
+			</div>
+		</div>
+		<div class="card-product">
+			<img src="https://cdn1.ozone.ru/s3/multimedia-m/6728298106.jpg" width="400" height="500" alt="Побег из шоушенка">
+			<div class="information">
+				<h1>Первому игроку приготовиться</h1>
+				<h3>Оценка: 7/10</h3>
+			</div>
+		</div>
+		<div class="card-product"></div>
+		<div class="card-product"></div>
+	</div>
+
+</body>
+</html>
